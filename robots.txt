@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://manoj18patel.github.io/gh-pages/sitemap.xml

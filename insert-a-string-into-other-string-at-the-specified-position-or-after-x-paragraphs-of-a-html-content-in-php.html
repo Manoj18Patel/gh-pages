@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Insert a string into other string at the specified position or after X paragraphs of a HTML content in PHP - Test</title><meta name="description" content="There is a function built into PHP called substr_replace(), and if we use that function, we may insert a string (or paragraphs) at the point that we desire. For instance, we are inserting the 'to' after the 'Welcome' in the following example, which can be found&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://manoj18patel.github.io/gh-pages/insert-a-string-into-other-string-at-the-specified-position-or-after-x-paragraphs-of-a-html-content-in-php.html"><link rel="alternate" type="application/atom+xml" href="https://manoj18patel.github.io/gh-pages/feed.xml"><link rel="alternate" type="application/json" href="https://manoj18patel.github.io/gh-pages/feed.json"><meta property="og:title" content="Insert a string into other string at the specified position or after X paragraphs of a HTML content in PHP"><meta property="og:site_name" content="Test"><meta property="og:description" content="There is a function built into PHP called substr_replace(), and if we use that function, we may insert a string (or paragraphs) at the point that we desire. For instance, we are inserting the 'to' after the 'Welcome' in the following example, which can be found&hellip;"><meta property="og:url" content="https://manoj18patel.github.io/gh-pages/insert-a-string-into-other-string-at-the-specified-position-or-after-x-paragraphs-of-a-html-content-in-php.html"><meta property="og:type" content="article"><link rel="stylesheet" href="https://manoj18patel.github.io/gh-pages/assets/css/style.css?v=cccdbc7ffd3a52558ea43b4ef5b8824d"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://manoj18patel.github.io/gh-pages/insert-a-string-into-other-string-at-the-specified-position-or-after-x-paragraphs-of-a-html-content-in-php.html"},"headline":"Insert a string into other string at the specified position or after X paragraphs of a HTML content in PHP","datePublished":"2023-03-10T18:40","dateModified":"2023-03-10T18:40","description":"There is a function built into PHP called substr_replace(), and if we use that function, we may insert a string (or paragraphs) at the point that we desire. For instance, we are inserting the 'to' after the 'Welcome' in the following example, which can be found&hellip;","author":{"@type":"Person","name":"test","url":"https://manoj18patel.github.io/gh-pages/authors/test/"},"publisher":{"@type":"Organization","name":"test"}}</script></head><body><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://manoj18patel.github.io/gh-pages/">Test</a></div></header><div class="content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2023-03-10T18:40">March 10, 2023</time></div></div><main class="main"><article class="post"><header class="u-header post__header"><h1>Insert a string into other string at the specified position or after X paragraphs of a HTML content in PHP</h1><div class="u-header__meta u-small"><div><a href="https://manoj18patel.github.io/gh-pages/authors/test/" title="test">test</a> <time datetime="2023-03-10T18:40">March 10, 2023</time></div></div></header><div class="post__entry u-inner"><p>There is a function built into PHP called <strong>substr_replace()</strong>, and if we use that function, we may insert a string (or paragraphs) at the point that we desire.</p><h2>Using substr_replace() function to add string at specified position</h2><p>For instance, we are inserting the "<strong>to</strong>" after the "<strong>Welcome</strong>" in the following example, which can be found below.</p><pre class="ql-syntax" spellcheck="false"><span class="hljs-variable">$hello</span> = <span class="hljs-string">"Welcome CopyProgramming.com"</span>;
+
+<span class="hljs-variable">$newstr</span> = substr_replace(<span class="hljs-variable">$hello</span>,<span class="hljs-string">" to"</span>, 7, 0);
+
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$newstr</span>;</pre><p>The output:</p><pre class="ql-syntax" spellcheck="false">Welcome to CopyProgramming.com</pre><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"> </div><h2><strong>Syntax substr_replace</strong></h2><pre class="ql-syntax" spellcheck="false">substr_replace(<span class="hljs-variable">$original_str</span>, <span class="hljs-variable">$replace_str</span>, <span class="hljs-variable">$start</span>, <span class="hljs-variable">$length</span>)</pre><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"> </div><ol><li><strong>$original_str</strong> is the input string.</li><li><strong>$replace_str</strong> is the replacement string.</li><li><strong>$start</strong> is the replacing will begin at the <strong>$start</strong> offset into <strong>$original_str</strong>.</li><li><strong>$length</strong> is how many characters must be deleted from the <strong>$start</strong> place before proceeding.</li></ol><h2>Real Code Example: Insert Google Adsense code into an article at the desired positions (after X paragraphs of a HTML content)</h2><p>In the following code example, we insert a Google Adsense code (or any ad code) into the body of a post at your specified positions or after X paragraphs of a HTML text. Firstly, we define the 2 custom functions: <strong>strpos_all()</strong> and <strong>insert_ads_into_content()</strong>.</p><pre class="ql-syntax" spellcheck="false"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">strpos_all</span><span class="hljs-params">($haystack, $needle, $max_pos=<span class="hljs-number">2</span>)</span> </span>{
+    $offset = <span class="hljs-number">0</span>;
+    $allpos = <span class="hljs-keyword">array</span>();
+
+    <span class="hljs-keyword">while</span> (($pos = strpos($haystack, $needle, $offset)) !== <span class="hljs-keyword">FALSE</span>) {
+        $offset   = $pos + <span class="hljs-number">1</span>;
+        $allpos[] = $pos;
+
+        <span class="hljs-keyword">if</span> (count($allpos) &gt;= $max_pos) {
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    <span class="hljs-keyword">return</span> $allpos;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">insert_ads_into_content</span><span class="hljs-params">($body_content,
+                               $ad_content = array(
+                                   <span class="hljs-string">'tag'</span> =&gt; <span class="hljs-string">'div'</span>,
+                                   <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'w-full text-center'</span>,
+                                   <span class="hljs-string">'content'</span> =&gt; <span class="hljs-string">''</span>
+                               ),
+                               $tag_name = <span class="hljs-string">'p'</span>,
+                               $ad_position = array(<span class="hljs-number">2</span>))</span>
+</span>{
+    <span class="hljs-keyword">try</span> {
+        $find_closed_tag = <span class="hljs-string">'&lt;/'</span> . $tag_name . <span class="hljs-string">'&gt;'</span>;
+        $num_ad_position = count($ad_position);
+        $possible_postions = strpos_all($body_content, $find_closed_tag, $ad_position[$num_ad_position<span class="hljs-number">-1</span>]);
+
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">empty</span>($possible_postions)) {
+            $num_possible_positions = count($possible_postions);
+            $num_find_closed_tag = strlen($find_closed_tag);
+            $full_ad_content = <span class="hljs-string">'&lt;'</span> . $ad_content[<span class="hljs-string">'tag'</span>] . <span class="hljs-string">' class="'</span> . $ad_content[<span class="hljs-string">'class'</span>] . <span class="hljs-string">'"&gt;'</span> . $ad_content[<span class="hljs-string">'content'</span>] . <span class="hljs-string">'&lt;/'</span> . $ad_content[<span class="hljs-string">'tag'</span>] . <span class="hljs-string">'&gt;'</span>;
+            $num_full_ad_content = strlen($full_ad_content);
+            $offset = <span class="hljs-number">0</span>;
+
+            <span class="hljs-keyword">foreach</span> ($ad_position <span class="hljs-keyword">as</span> $ad_item) {
+                <span class="hljs-keyword">if</span> (($ad_item<span class="hljs-number">-1</span>) &lt; $num_possible_positions) {
+                    $body_content = substr_replace($body_content, $full_ad_content, $possible_postions[$ad_item<span class="hljs-number">-1</span>] + $num_find_closed_tag + $offset, <span class="hljs-number">0</span>);
+                    $offset += $num_full_ad_content;
+                }
+            }
+
+            <span class="hljs-keyword">return</span> $body_content;
+        }
+        <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> $body_content;
+        }
+    }
+    <span class="hljs-keyword">catch</span> (<span class="hljs-keyword">Exception</span> $e) {
+        <span class="hljs-keyword">return</span> $body_content;
+    }
+}</pre><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"> </div><p>After that, we define <strong>$google_adsense_code</strong>, <strong>$post_content</strong> variables and insert the code into the body of the post at the 2, 4th positions of the paragraphs (with <strong>p</strong> tag) in HTML text.</p><pre class="ql-syntax" spellcheck="false"><span class="hljs-comment">// Insert ad code into body_html</span>
+$google_adsense_code = <span class="hljs-string">"The Javascript of Google Adsense code here"</span>;
+$article_body = <span class="hljs-string">"&lt;p&gt;Content 1&lt;/p&gt;&lt;p&gt;Content 2&lt;/p&gt;&lt;p&gt;Content 3&lt;/p&gt;&lt;p&gt;Content 4&lt;/p&gt;&lt;p&gt;Content 5&lt;/p&gt;&lt;p&gt;Content 6&lt;/p&gt;"</span>;
+$article_body = insert_ads_into_content($article_body, <span class="hljs-keyword">array</span>(<span class="hljs-string">'tag'</span> =&gt; <span class="hljs-string">'div'</span>, <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'w-full text-center'</span>, <span class="hljs-string">'content'</span> =&gt; $google_adsense_code), <span class="hljs-string">'p'</span>, <span class="hljs-keyword">array</span>(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>));
+<span class="hljs-keyword">print</span>($article_body);</pre></div><aside class="post__aside"><div class="post__last-updated u-small">This article was updated on March 10, 2023</div><div class="post__share"></div></aside><footer class="post__footer"><div class="post__bio box"><div><h4 class="h6"><a href="https://manoj18patel.github.io/gh-pages/authors/test/" title="test">test</a></h4></div></div></footer></article></main><div class="sidebar"><section class="box authors"><h3 class="box__title">Authors</h3><ul class="authors__cotainer"><li class="authors__item"><div><a href="https://manoj18patel.github.io/gh-pages/authors/test/" class="authors__title">test</a> <span class="u-small">Post: 1</span></div></li></ul></section><section class="newsletter box box--gray"><h3 class="box__title">Newsletter</h3><p class="newsletter__description">Sign up to receive email updates and to hear what's going on with us!</p><form>...</form></section></div><footer class="footer"><a class="footer__logo" href="https://manoj18patel.github.io/gh-pages/">Test</a><nav><ul class="footer__nav"></ul></nav><div class="footer__copyright"><p>Powered by Publii</p></div></footer></div><script>window.publiiThemeMenuConfig = {    
+        mobileMenuMode: 'sidebar',
+        animationSpeed: 300,
+        submenuWidth: 'auto',
+        doubleClickTime: 500,
+        mobileMenuExpandableSubmenus: true, 
+        relatedContainerForOverlayMenuSelector: '.navbar',
+   };</script><script defer="defer" src="https://manoj18patel.github.io/gh-pages/assets/js/scripts.min.js?v=ef33954c8f912e6c18ee116825aadc90"></script><script>var images = document.querySelectorAll('img[loading]');
+
+      for (var i = 0; i < images.length; i++) {
+         if (images[i].complete) {
+               images[i].classList.add('is-loaded');
+         } else {
+               images[i].addEventListener('load', function () {
+                  this.classList.add('is-loaded');
+               }, false);
+         }
+      }</script></body></html>
